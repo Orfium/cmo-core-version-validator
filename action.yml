@@ -1,0 +1,37 @@
+name: 'CMO Core Version Validator'
+description: 'Read version of cmo-core library in a specified requirements file or toml file for a specific commit hash for 2 repositories and check that the version of the source dependency is lower or equal to the one in the destination repository.'
+inputs:
+  github_access_token:
+    description: The github token
+    required: true
+  current_repo:
+    description: "The repo on which we are performing the validation. E.g. Orfium/cmo-allocation"
+    required: true
+  current_hash:
+    description: "The hash on which we are performing the validation"
+    required: true
+  current_requirements_file:
+    description: "The requirements file on which we must detect cmo-core version"
+    required: true
+  current_requirements_file_format:
+    description: "The format of the requirements file. Currently only toml or txt is supported"
+    required: true
+  ref_repo:
+    description: "The repo on which we are performing the validation against"
+    required: true
+  ref_hash:
+    description: "The hash on which we are performing the validation against"
+    required: true
+  ref_requirements_file:
+    description: "The requirements file on which we must detect cmo-core version as a ref"
+    required: true
+  ref_requirements_file_format:
+    description: "The format of the requirements file. Currently only toml or txt is supported"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+branding:
+  icon: 'link'
+  color: 'green'
+
