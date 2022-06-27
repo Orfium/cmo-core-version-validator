@@ -81,7 +81,7 @@ def main():
         file_type=REF_REQUIREMENTS_FILE_FORMAT
     )
 
-    if version.parse(src_core_version) < version.parse(dst_core_version):
+    if version.parse(src_core_version) > version.parse(dst_core_version):
         raise AssertionError(
             f"{src_core_version} is incompatible with {dst_core_version} "
         )
