@@ -64,7 +64,7 @@ def __get_cmo_core_version_from_pip_requirements(contents):
 
 def main():
     gh_client = Github(
-        access_key=GITHUB_ACCESS_TOKEN
+        GITHUB_ACCESS_TOKEN
     )
 
     gh_src = gh_client.get_repo(CURRENT_REPO).get_contents(
